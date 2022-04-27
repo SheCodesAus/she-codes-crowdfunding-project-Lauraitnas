@@ -12,6 +12,7 @@ import NavHeader from "./components/NavHeader/NavHeader";
 import HomePage from "./pages/HomePage";
 import ProjectPage from "./pages/ProjectPage";
 import ProjectsPage from "./pages/ProjectsPage";
+import LoginPage from "./pages/LoginPage";
 // import AssociationPage from "./pages/AssociationPage";
 
 
@@ -22,10 +23,11 @@ function App() {
         <NavHeader/>
         <Nav/>
         <Routes>
+          <Route path="/" element={<HomePage/>} />
+          <Route path="/login" element={<LoginPage />} />
           <Route path="/project/:id" element={<ProjectPage />} />
           {/* <Route path="/association/:id" element={<AssociationPage />} /> */}
           <Route path="/projects/" element={<ProjectsPage/>} />
-          <Route path="/" element={<HomePage/>} />
         </Routes>
       </div>
     </Router>

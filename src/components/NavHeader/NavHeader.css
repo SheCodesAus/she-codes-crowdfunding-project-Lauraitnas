@@ -3,3 +3,7 @@
     padding: 30px;
     text-align: center;
 }
+
+.logo {
+    max-width: 200px;
+}
