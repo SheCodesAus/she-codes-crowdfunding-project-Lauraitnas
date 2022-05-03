@@ -10,8 +10,10 @@ function NavHeader() {
     
     return(
         <nav className="navHeader">
-            {/* <Link to="/">Home</Link> */}
+            <Link to="/">Create Account</Link>
             <Link to="/"><img className="logo" src={Forest}/></Link>
+            <Link to="/login/">Login</Link>
+
         </nav>
     )
 }

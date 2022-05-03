@@ -15,6 +15,7 @@ function ProjectCard({ projectData }) {
             <h3 className="project-title">{projectData.title}</h3>
             <h3>{projectData.association.association_name}</h3>
             <h3 className="project-goal">${projectData.goal}</h3>
+            <button>Support</button>
             <h4 className="project-date_created">{new Date(projectData.date_created).toDateString()}</h4>
         
     </div>
