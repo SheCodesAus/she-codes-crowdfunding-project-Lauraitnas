@@ -13,7 +13,8 @@ import HomePage from "./pages/HomePage";
 import ProjectPage from "./pages/ProjectPage";
 import ProjectsPage from "./pages/ProjectsPage";
 import LoginPage from "./pages/LoginPage";
-// import AssociationPage from "./pages/AssociationPage";
+import AssociationPage from "./pages/AssociationPage";
+import UserPage from "./pages/ProfilePage";
 
 
 function App() {
@@ -26,8 +27,9 @@ function App() {
           <Route path="/" element={<HomePage/>} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/project/:id" element={<ProjectPage />} />
-          {/* <Route path="/association/:id" element={<AssociationPage />} /> */}
+          <Route path="/association/:user" element={<AssociationPage/>} />
           <Route path="/projects/" element={<ProjectsPage/>} />
+          <Route path="/users/:id" element={<UserPage/>} />
         </Routes>
       </div>
     </Router>

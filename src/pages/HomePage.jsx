@@ -6,6 +6,7 @@ import "./styles.css"
 //components
 import ProjectCard from "../components/ProjectCard/ProjectCard";
 import AssociationCard from "../components/Association/AssociationCard";
+import HeaderImage from "../components/HeaderImage/HeaderImage";
 
 function HomePage() {
 
@@ -40,7 +41,8 @@ function HomePage() {
 
     
     return (
-    <body>
+    <div>
+        <HeaderImage/>
         <div className="project_home">
             <div className="subtitles">
             <h2>Woods and Forests are essential for Life</h2>
@@ -73,7 +75,7 @@ function HomePage() {
             <button className="donate_button" type="button">DONATE</button>
             </Link>
         </div>
-    </body>
+    </div>
     );
 }
 

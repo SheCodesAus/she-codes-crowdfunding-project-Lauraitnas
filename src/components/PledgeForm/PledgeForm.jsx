@@ -21,7 +21,8 @@ function PledgeForm({ projectId }) {
     const hadnleSubmit = async(event) => {
         event.preventDefault();
         try {
-            const res = await fetch(`${process.env.REACT_APP_API_URL}pledges/`, {
+            const res = await 
+            fetch(`${process.env.REACT_APP_API_URL}pledges/`, {
                 method:"post",
                 headers: {
                     "Content-Type": "application/json",

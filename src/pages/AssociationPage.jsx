@@ -8,18 +8,19 @@ function AssociationPage() {
     const [associationData, setAssociationData] = useState();
 
     //Hooks
-    const { id } = useParams();
+    const { user } = useParams();
 
     //Actions and Helpers
     useEffect(() => {
-        fetch(`${process.env.REACT_APP_API_URL}association/${id}`)
+        console.log(user)
+        fetch(`${process.env.REACT_APP_API_URL}association/${user}`)
             .then((results) => {
                 return results.json();
             })
             .then((data) => {
                 setAssociationData(data);
             });
-    }, [id]);
+    }, [user]);
     
     //Loading state
     if (!associationData) {
@@ -30,7 +31,8 @@ function AssociationPage() {
     //Normal State
     return (
     <>
-        <h2>{associationData.user}</h2>
+        <h2>{associationData.username}</h2>
+        <img src={associationData.forest_image} alt="association image"/>
         <h3>We are in: {associationData.location}</h3>
     </>
     );

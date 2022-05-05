@@ -2,6 +2,9 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import PledgeForm from "../components/PledgeForm/PledgeForm";
 
+//styles
+import "./styles.css"
+
 
 function ProjectPage() {
 
@@ -31,19 +34,25 @@ function ProjectPage() {
     //Normal State
     return (
     <>
-        <h2>{projectData.title}</h2>
-        <img src={projectData.image}/>
-        <h2>{projectData.association.association_name}</h2>
-        <h3>Created at: {projectData.date_created}</h3>
-        <h3>Our goal is ${projectData.goal}</h3>
-        <h3>{projectData.description}</h3>
-        <h3> This projects is closing on {projectData.deadline}</h3>
-        <h3>{`Status: ${projectData.is_open}`}</h3>
+    <div className="project-container">
+        <div className="image-container">
+            <img className="project-image" src={projectData.image}/>
+        </div>
+        <div className="project-info">
+            <h2>{projectData.title}</h2>
+            <h2>{projectData.association.association_name}</h2>
+            <h4>{new Date(projectData.date_created).toDateString()}</h4>
+            <h3>Our goal is ${projectData.goal}</h3>
+            <h3>{projectData.description}</h3>
+            <h3> This projects is closing on {new Date(projectData.deadline).toDateString()}</h3>
+            {/* <h3>{`Status: ${projectData.is_open}`}</h3> */}
+        </div>
+    </div>
         <h3>Pledges:</h3>
         <ul>
             {projectData.pledges.map((pledgeData, key) => 
             {return (
-            <li>
+            <li key={`pledge-${pledgeData.id}`} >
                 {pledgeData.amount} from {pledgeData.supporter}
             </li>
             );

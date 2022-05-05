@@ -1,5 +1,5 @@
 import React, {useState}  from "react";
-import { Navigate, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 function LoginForm() {
     
@@ -10,7 +10,7 @@ function LoginForm() {
     });
 
     //Hooks
-    const history = useNavigate();
+    const navigate = useNavigate();
 
     //Actions and Helpers 
     const handleChange = (event) => {
@@ -37,9 +37,10 @@ function LoginForm() {
                     }
                 );
                 const data = await response.json();
+                console.log("login", data)
                 window.localStorage.setItem("token", data.token);
                 window.localStorage.setItem("username", credentials.username);
-                Navigate("/");
+                navigate("/");
             } catch (err) {
                 console.log(err);
             }
