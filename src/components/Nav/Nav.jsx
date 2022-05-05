@@ -6,7 +6,7 @@ import "./Nav.css"
 function Nav() {
     
     return(
-        <nav>
+        <nav className="main-nav">
             <Link to="/">How to support</Link>
             <Link to="/">Home</Link>
             <Link to="/projects/">Start supporting</Link>

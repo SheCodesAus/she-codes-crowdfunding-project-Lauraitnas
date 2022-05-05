@@ -28,16 +28,16 @@ function NavHeader() {
     const checkUser = () => {
         const isUserLoggedIn = !!window.localStorage.getItem("token");
         console.log("isuserloggedin", isUserLoggedIn)
-        return isUserLoggedIn ? <button  onClick={handleSignOut}>Sign out</button> : <button onClick={reloadPage}>Login</button>
+        return isUserLoggedIn ? <button className="nav-button" onClick={handleSignOut}>Sign out</button> : <button className="nav-button" onClick={reloadPage}>Login</button>
     }
 
     
     
     return(
         <nav className="navHeader">
-            <Link to="/">Create Account</Link>
-            <Link to="/"><img className="logo" src={Forest}/></Link>
-            {checkUser()}
+            <div><button className="nav-button">Create Account</button></div>
+            <div><Link to="/"><img className="logo" src={Forest}/></Link></div>
+            <div>{checkUser()}</div>
         </nav>
     )
 }

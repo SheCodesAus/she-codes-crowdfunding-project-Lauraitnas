@@ -39,12 +39,27 @@ function HeaderImage() {
                 <ul data-slides>
                     <li className="slide" data-active>
                         <Link to="/"><img className="header-image" src={Protect}/></Link>
+                        <div className="category-div">
+                            <h2>We Protect</h2>
+                            <h4>We save woods and trees from decimation. We stand against needles destruction and lead the fight against tree pests and desease.</h4>
+                            <button className="category-button">Protect</button>
+                        </div>
                     </li>
                     <li className="slide"> 
                         <Link to="/"><img className="header-image" src={Plant}/></Link>
+                        <div className="category-div">
+                            <h2>We Plant</h2>
+                            <h4>We plant woods and tress to combat climate change, build a greener future and create heavens for life.</h4>
+                            <button className="category-button">Plant</button>
+                        </div>
                     </li>
                     <li className="slide">
                         <Link to="/"><img className="header-image" src={Restore}/></Link>
+                        <div className="category-div">
+                            <h2>We Restore</h2>
+                            <h4>We bring damaged ancient wood back to life. We replace this irreplaceable ecosystems before they are lost forever.</h4>
+                            <button className="category-button">Restore</button>
+                        </div>
                     </li>
                 </ul>
             </div>

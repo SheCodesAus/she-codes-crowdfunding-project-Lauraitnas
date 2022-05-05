@@ -72,7 +72,7 @@ function HomePage() {
                 })}
             </div>
             <Link to="/projects/">
-            <button className="donate_button" type="button">DONATE</button>
+            <div className="btn"><button className="donate_button" type="button">DONATE</button></div>
             </Link>
         </div>
     </div>

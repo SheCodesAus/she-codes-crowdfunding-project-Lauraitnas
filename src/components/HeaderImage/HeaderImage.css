@@ -42,7 +42,7 @@ body{
     object-position: center;
 }
 
-.carousel button {
+.carousel-button {
     position: absolute;
     z-index: 2;
     background: none;
@@ -75,4 +75,32 @@ body{
 .carousel-button.next {
     right: 1rem;
     
+}
+
+.category-div {
+    position: absolute;
+    top: 60%;
+    right: 10rem;
+    z-index: 3;
+    background: none;
+    border: none;
+    line-height: 2rem;
+    font-size: 1.3rem;
+    width: 30%;
+    transform: translateY(-50%);
+    color: white;
+    cursor: pointer;
+    border-radius: .25rem;
+    padding: 30px;
+    background-color: rgba(0, 0, 0, .1);
+}
+
+.category-button {
+    background-color: #04443C;
+    color: white;
+    padding: 10px;
+    font-size: 20px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+    border: none;
+
 }
