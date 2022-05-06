@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 
 function ProjectForm() {
 
@@ -29,7 +29,6 @@ function ProjectForm() {
     //check data exist and save to the backend
     const handleSubmit = async(event) => {
         event.preventDefault();
-        console.log("handleSubmit", project)
         const token = window.localStorage.getItem("token");
         if (!token)return;
         
@@ -46,11 +45,11 @@ function ProjectForm() {
                     body: JSON.stringify({
                         title: project.title,
                         description: project.description,
-                        goal: project.goal,
+                        goal: parseInt(project.goal),
                         image: project.image,
-                        is_open: project.is_open,
-                        data_created: project.date_created,
-                        deadline: project.deadline,
+                        is_open: project.is_open === "on",
+                        date_created: new Date(project.date_created).toISOString(),
+                        deadline: new Date(project.deadline).toISOString(),
                         associaton: window.localStorage.getItem("username"),
                         category: project.category,
                     }),
@@ -120,7 +119,7 @@ function ProjectForm() {
                         {
                             id: "date_created",
                             label: "Date created",
-                            placeholder: "Enter title",
+                            placeholder: "Enter date",
                             type: "date",
                             options: [],
                         },
@@ -142,11 +141,11 @@ function ProjectForm() {
                 setFormFields(fields)
                 });
         }, []);
-    // if (!window.localStorage.getItem("token")) {
-    //     return(
-    //         <Link to="/login"> Please login</Link>
-    //     );
-    // }
+    if (!window.localStorage.getItem("token")) {
+        return(
+            <Link to="/login"> Please login</Link>
+        );
+    }
 
     
 

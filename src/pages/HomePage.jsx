@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import "./styles.css"
 //components
 import ProjectCard from "../components/ProjectCard/ProjectCard";
-import AssociationCard from "../components/Association/AssociationCard";
+import AssociationCard from "../components/AssociationCard/AssociationCard";
 import HeaderImage from "../components/HeaderImage/HeaderImage";
 
 function HomePage() {

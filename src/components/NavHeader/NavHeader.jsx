@@ -31,11 +31,16 @@ function NavHeader() {
         return isUserLoggedIn ? <button className="nav-button" onClick={handleSignOut}>Sign out</button> : <button className="nav-button" onClick={reloadPage}>Login</button>
     }
 
+    const checkProfile = () => {
+        const isUserLoggedIn = !!window.localStorage.getItem("token");
+        return !isUserLoggedIn ? <div className="nav-button"><Link to="/users/register">Create account</Link></div> : <div className="nav-button"><Link to="/users/{id}">My Profile</Link></div>
+    }
+
     
     
     return(
         <nav className="navHeader">
-            <div><button className="nav-button">Create Account</button></div>
+            <div>{checkProfile()}</div>
             <div><Link to="/"><img className="logo" src={Forest}/></Link></div>
             <div>{checkUser()}</div>
         </nav>

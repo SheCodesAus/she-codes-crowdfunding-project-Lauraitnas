@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 
 //styles
 import "./styles.css"
@@ -71,6 +71,7 @@ function AssociationPage() {
                 );
             })}
         </div>
+        <div><Link to="/projects/new_project/" className="nav-button">Create a new Project</Link></div>
     </>
     );
 }
