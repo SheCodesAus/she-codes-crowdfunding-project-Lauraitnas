@@ -10,7 +10,7 @@ function AssociationCard({ associationData }) {
         <Link to={`/association/${associationData.user}`}>
             <img src={associationData.forest_image} alt="association image"/>
         </Link>
-            <h3 className="association_name">{associationData.association_name}</h3>
+        <h3 className="association_name">{associationData.association_name}</h3>
         
     </div>
     );

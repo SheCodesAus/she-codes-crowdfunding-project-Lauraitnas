@@ -1,6 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 
+//styles
+import "./styles.css"
+
+
 //components
 import ProjectCard from "../components/ProjectCard/ProjectCard";
 
@@ -51,9 +55,13 @@ function AssociationPage() {
     //Normal State
     return (
     <>
-        <h2>{associationData.username}</h2>
-        <img src={associationData.forest_image} alt="association image"/>
-        <h3>We are in: {associationData.location}</h3>
+        <div className="association-image">
+            <img src={associationData.forest_image} alt="association image"/>
+            <div className="association_info">
+            <h2 >{associationData.association_name}</h2>
+            <h3 >{associationData.location}</h3>
+            </div>
+        </div>
         <div id="project-list">
             {projectList.map((projectData) => {
                 return (

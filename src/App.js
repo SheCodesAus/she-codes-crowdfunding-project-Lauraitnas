@@ -15,6 +15,8 @@ import ProjectsPage from "./pages/ProjectsPage";
 import LoginPage from "./pages/LoginPage";
 import AssociationPage from "./pages/AssociationPage";
 import UserPage from "./pages/ProfilePage";
+import WeProtectPage from "./pages/WeProtect";
+import NewProjectPage from "./pages/NewProject";
 
 
 function App() {
@@ -26,10 +28,12 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage/>} />
           <Route path="/login" element={<LoginPage />} />
+          <Route path="/projects/new_project/" element={<NewProjectPage/>} />
           <Route path="/project/:id" element={<ProjectPage />} />
           <Route path="/association/:user" element={<AssociationPage/>} />
           <Route path="/projects/" element={<ProjectsPage/>} />
           <Route path="/users/:id" element={<UserPage/>} />
+          <Route path="/category/we_protect" element={<WeProtectPage/>} />
         </Routes>
       </div>
     </Router>
