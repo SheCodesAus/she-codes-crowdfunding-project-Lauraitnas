@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import PledgeForm from "../components/PledgeForm/PledgeForm";
 
 //styles
@@ -24,6 +24,19 @@ function ProjectPage() {
                 setProjectData(data);
             });
     }, [id]);
+
+    //user is === to author of project TO CHECK
+    // const checkUser = () => {
+    //     const isUserAuthor = window.localStorage.getItem("token");
+    //     console.log("isuserAuthor", isUserAuthor)
+    //     return isUserAuthor ? 
+    //     <div className="project-buttons">  
+    //         <div ><Link to="/" className="nav-button">Edit your project</Link></div>
+    //         <div ><Link to="/" className="nav-button">Delete your project</Link></div>
+    // </div>
+    // : ""
+    // }
+
     
     //Loading state
     if (!projectData) {
@@ -46,6 +59,10 @@ function ProjectPage() {
             <h3>{projectData.description}</h3>
             <h3> This projects is closing on {new Date(projectData.deadline).toDateString()}</h3>
             {/* <h3>{`Status: ${projectData.is_open}`}</h3> */}
+            <div className="project-buttons">  
+                <div ><Link to={`/project/${projectData.id}/edit`} className="nav-button">Edit your project</Link></div>
+                <div ><Link to="/" className="nav-button">Delete your project</Link></div>
+            </div>
         </div>
     </div>
         <h3>Pledges:</h3>

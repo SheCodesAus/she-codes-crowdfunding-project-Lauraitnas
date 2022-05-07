@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Routes, Route} from "react-router-dom";
+import { Navigate, BrowserRouter as Router, Routes, Route} from "react-router-dom";
 
 //style
 import "./App.css";
@@ -21,6 +21,7 @@ import NewUserPage from "./pages/NewUserPage";
 import NewAssociationPage from "./pages/NewAssociation";
 import EditProfilePage from "./pages/EditUserPage";
 import EditProjectPage from "./pages/EditProjectPage";
+import NotFoundPage from "./pages/NotFoundPage";
 
 
 function App() {
@@ -36,12 +37,15 @@ function App() {
           <Route path="/users/edit_user" element={<EditProfilePage />} />
           <Route path="/association" element={<NewAssociationPage />} />
           <Route path="/projects/new_project/" element={<NewProjectPage/>} />
-          <Route path="/projects/edit_project/:id" element={<EditProjectPage/>} />
           <Route path="/project/:id" element={<ProjectPage />} />
+          <Route path="/project/:id/edit" element={<EditProjectPage/>} />
           <Route path="/association/:user" element={<AssociationPage/>} />
           <Route path="/projects/" element={<ProjectsPage/>} />
           <Route path="/users/:id" element={<UserPage/>} />
           <Route path="/category/we_protect" element={<WeProtectPage/>} />
+          <Route path="/404" element={<NotFoundPage/>} /> 
+          <Route path="/*" element={<Navigate replace to="/404"/>} />
+        
         </Routes>
       </div>
     </Router>
