@@ -28,6 +28,15 @@ height: 450px;
 object-fit:cover;
 }
 
+.association-name, .association-location {
+    color: white;
+    text-align: center;
+}
+
+.association-location {
+    text-transform: uppercase;
+}
+
 .association-image {
     position: relative;
 }
@@ -38,11 +47,11 @@ object-fit:cover;
     object-fit:cover;
 }
 
-.association_info {
+.association_info{
     position: absolute;
     z-index: 2;
     top: 20px;
-    right: 50%;
+    width: 100%;
     font-size: 30px;
     color: white;
     text-align: center;
@@ -70,7 +79,10 @@ object-fit:cover;
     color: white;
     text-align: center;
     text-transform: uppercase;
+}
 
+.user-username {
+    color: white;
 }
 
 .user-image img{
@@ -126,4 +138,13 @@ object-fit:cover;
     display: flex;
     text-decoration: none;
     text-transform: capitalize;
+}
+
+.error-section {
+    width: 100%;
+}
+
+.error-image {
+    width: 100%;
+    object-fit: cover
 }

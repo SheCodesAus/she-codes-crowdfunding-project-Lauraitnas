@@ -49,8 +49,9 @@ function PledgeForm({ projectId }) {
     }
 
     return (
+        <div className="form">
         <form>
-            <div>
+            <div className="form-item">
             <label htmlFor="amount">Amount:</label>
             <input
                 type="number"
@@ -59,18 +60,21 @@ function PledgeForm({ projectId }) {
                 onChange={handleChange}
             />
             </div>
-            <div>
+            <div className="form-item">
             <label htmlFor="anonymous">Anonymous:</label>
-            <select id="anonymous" onChange={handleChange}>
+            <select className="form-item" id="anonymous" onChange={handleChange}>
                 <option value="">--Please select an option--</option>
                 <option value={true}>True</option>
                 <option value={false}>False</option>
             </select>
             </div>
+            <div className="form-item">
             <button type="submit"  onClick={hadnleSubmit}>
             Pledge
             </button>
+            </div>
         </form>
+        </div>
         );
 }
 

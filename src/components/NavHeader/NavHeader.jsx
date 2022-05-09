@@ -1,5 +1,5 @@
-import React from "react";
-import { Link, useNavigate, Router } from "react-router-dom";
+import React, { useState } from "react";
+import { Link, useNavigate, Router, useParams } from "react-router-dom";
 
 import Forest from "../../images/Forest.png"
 
@@ -10,7 +10,15 @@ import "./NavHeader.css"
 
 function NavHeader() {
 
+    //State
+    const [usersData, setUsersData] = useState();
+
+        //Hooks
+    
     const navigate = useNavigate();
+    const { id } = useParams();
+
+    const username = window.localStorage.getItem("username")
 
 
     const reloadPage = () => {
@@ -33,7 +41,7 @@ function NavHeader() {
 
     const checkProfile = () => {
         const isUserLoggedIn = !!window.localStorage.getItem("token");
-        return !isUserLoggedIn ? <div className="nav-button"><Link to="/users/register">Create account</Link></div> : <div className="nav-button"><Link to="/users/{id}">My Profile</Link></div>
+        return !isUserLoggedIn ? <div className="nav-button"><Link to="/users/register">Create account</Link></div> : <div className="nav-button"><Link to={`users/${username}`}>My Profile</Link></div>
     }
 
     

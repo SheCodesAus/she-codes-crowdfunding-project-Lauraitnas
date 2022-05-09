@@ -20,7 +20,9 @@ function HomePage() {
             return results.json();
         })
         .then((data) => {
-        setProjectList(data);
+            const latestProject = data.splice(0, 3)
+            setProjectList(latestProject);
+
         });
     }, []);
 
@@ -53,14 +55,14 @@ function HomePage() {
                     return (
                         <ProjectCard 
                         key={`project-${projectData.id}`} 
-                    projectData={projectData} />
+                    projectData={projectData}/>
                     );
                 })}
             </div>
         </div>
         <div className="association_home">
             <div className="subtitles">
-            <h1>GET INVOLVED</h1>
+            <h1>Visiting our Forests</h1>
             </div>
             <div id="association-list">
                 {associationList.map((associationData) => {

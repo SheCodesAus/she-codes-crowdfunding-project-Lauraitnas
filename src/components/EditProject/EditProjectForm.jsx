@@ -37,7 +37,7 @@ function EditProjectForm({project, categories}) {
         if (project.date_created !== editProjectInfo.date_created) updatedProject.date_created = new Date(editProjectInfo.date_created).toISOString()
         if (project.deadline !== editProjectInfo.deadline) updatedProject.deadline = new Date(editProjectInfo.deadline).toISOString()
 
-        if (project.title && project.description && project.goal && project.image && project.category && project.date_created && project.deadline) {
+        if (Object.keys(updatedProject).length > 0) {
             try {
                 const res = await 
                 fetch(`${process.env.REACT_APP_API_URL}projects/${project.id}`, {
@@ -59,9 +59,10 @@ function EditProjectForm({project, categories}) {
     }
 
 
-    return ( 
+    return (
+        <div className="form">
         <form>
-            <div>
+            <div className="form-item">
                 <label htmlFor="title">Title:</label>
                 <input
                     type="text"
@@ -70,7 +71,7 @@ function EditProjectForm({project, categories}) {
                     onChange={handleChange}
                 />
             </div>
-            <div>
+            <div className="form-item">
                 <label htmlFor="description">Description:</label>
                 <input
                     type="text"
@@ -79,7 +80,7 @@ function EditProjectForm({project, categories}) {
                     onChange={handleChange}
                 />
             </div>
-            <div>
+            <div className="form-item">
                 <label htmlFor="goal">Goal:</label>
                 <input
                     type="number"
@@ -88,7 +89,7 @@ function EditProjectForm({project, categories}) {
                     onChange={handleChange}
                 />
             </div>
-            <div>
+            <div className="form-item">
                 <label htmlFor="image">Image:</label>
                 <input
                     type="url"
@@ -97,7 +98,7 @@ function EditProjectForm({project, categories}) {
                     onChange={handleChange}
                 />
             </div>
-            <div>
+            <div className="form-item">
                 <label htmlFor="is_open">Open:</label>
                 <input
                     type="checkbox"
@@ -106,7 +107,7 @@ function EditProjectForm({project, categories}) {
                     onChange={handleChange}
                 />
             </div>
-            <div>
+            <div className="form-item">
                 <label htmlFor="date_created">Date created:</label>
                 <input
                     type="date"
@@ -115,7 +116,7 @@ function EditProjectForm({project, categories}) {
                     onChange={handleChange}
                 />
             </div>
-            <div>
+            <div className="form-item">
                 <label htmlFor="category">Category:</label>
                 <select name="category" id="category" defaultValue={editProjectInfo.category} onChange={handleChange}>
                     {categories.map((category, key) =>  {
@@ -125,7 +126,7 @@ function EditProjectForm({project, categories}) {
                     })}
                 </select>
             </div>
-            <div>
+            <div className="form-item">
                 <label htmlFor="deadline">Deadline:</label>
                 <input
                     type="date"
@@ -134,10 +135,13 @@ function EditProjectForm({project, categories}) {
                     onChange={handleChange}
                 />
             </div>
+            <div className="form-item">
             <button type="submit" onClick={handleSubmit}>
                     Update Project
             </button>
+            </div>
         </form>
+        </div> 
         )
     }
 

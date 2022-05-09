@@ -50,7 +50,7 @@ function HeaderImage() {
                         <div className="category-div">
                             <h2>We Plant</h2>
                             <h4>We plant woods and tress to combat climate change, build a greener future and create heavens for life.</h4>
-                            <Link to="/category/we_protect"><button className="category-button">Plant</button></Link>
+                            <Link to="/category/we_plant"><button className="category-button">Plant</button></Link>
                         </div>
                     </li>
                     <li className="slide">
@@ -58,7 +58,7 @@ function HeaderImage() {
                         <div className="category-div">
                             <h2>We Restore</h2>
                             <h4>We bring damaged ancient wood back to life. We replace this irreplaceable ecosystems before they are lost forever.</h4>
-                            <Link to="/category/we_protect"><button className="category-button">Restore</button></Link>
+                            <Link to="/category/we_restore"><button className="category-button">Restore</button></Link>
                         </div>
                     </li>
                 </ul>

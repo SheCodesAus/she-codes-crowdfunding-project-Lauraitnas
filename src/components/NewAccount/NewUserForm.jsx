@@ -123,11 +123,12 @@ function NewUserForm() {
     },
 ]
 
-    return ( 
+    return (
+        <div className="form">
         <form>
             {formFields.map((field, key) => {
                 return (
-                <div key={`${key}-${field.id}`}>
+                <div className="form-item" key={`${key}-${field.id}`}>
                     <label htmlFor={field.id}>
                         {field.label}
                     </label>
@@ -140,10 +141,13 @@ function NewUserForm() {
                 </div>
                 )
             })}
+            <div className="form-item">
             <button type="submit" onClick={handleSubmit}>
                 Create Account
             </button>
+            </div>
         </form>
+        </div>
     )
 }
 

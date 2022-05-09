@@ -83,7 +83,7 @@ function NewAssociationForm() {
     {
         id: "forest_image",
         label: "Forest photo",
-        placeholder: "Enter a photo of your forest",
+        placeholder: "Enter the url of a photo of your forest",
         type: "url",
     },
 ]
@@ -94,10 +94,11 @@ function NewAssociationForm() {
 }
 
     return ( 
+        <div className="form">
         <form>
             {formFields.map((field, key) => {
                 return (
-                <div key={`${key}-${field.id}`}>
+                <div className="form-item" key={`${key}-${field.id}`}>
                     <label htmlFor={field.id}>
                         {field.label}
                     </label>
@@ -110,10 +111,13 @@ function NewAssociationForm() {
                 </div>
                 )
             })}
+            <div className="form-item">
             <button type="submit" onClick={handleSubmit}>
-                Create Association
+                Create
             </button>
+            </div>
         </form>
+        </div>
     )
 }
 

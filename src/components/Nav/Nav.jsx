@@ -7,9 +7,9 @@ function Nav() {
     
     return(
         <nav className="main-nav">
-            <Link to="/">How to support</Link>
-            <Link to="/">Home</Link>
             <Link to="/projects/">Start supporting</Link>
+            <Link to="/">Home</Link>
+            <Link to="/contact-us/">Contact</Link>
         </nav>
     );
 }

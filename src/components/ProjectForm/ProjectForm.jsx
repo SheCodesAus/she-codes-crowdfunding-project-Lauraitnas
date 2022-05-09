@@ -151,15 +151,16 @@ function ProjectForm() {
 
 
     return ( 
+        <div className="form">
         <form>
             {formFields.map((field, key) => {
                 return (
-                <div key={`${key}-${field.id}`}>
+                <div className="form-item" key={`${key}-${field.id}`}>
                     <label htmlFor={field.id}>
                         {field.label}
                     </label>
                     {field.type === "select" 
-                        ? <select name={field.id} id={field.id} onChange={handleChange}>
+                        ? <select className="form-item" name={field.id} id={field.id} onChange={handleChange}>
                             {field.options.map((selectOption, key) =>  {
                                 return(
                                 <option key={`${key}-${selectOption.id}`} value={selectOption.slug}>{selectOption.name}</option>
@@ -176,10 +177,13 @@ function ProjectForm() {
                 </div>
                 )
             })}
-            <button type="submit" onClick={handleSubmit}>
-                Post Project
+            <div className="form-item">
+                <button type="submit" onClick={handleSubmit}>
+                Post
             </button>
+            </div>
         </form>
+        </div>
     )
 }
 

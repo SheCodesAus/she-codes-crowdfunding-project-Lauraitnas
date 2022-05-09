@@ -58,8 +58,8 @@ function AssociationPage() {
         <div className="association-image">
             <img src={associationData.forest_image} alt="association image"/>
             <div className="association_info">
-            <h2 >{associationData.association_name}</h2>
-            <h3 >{associationData.location}</h3>
+            <h1 className="association-name" >{associationData.association_name}</h1>
+            <h2 className="association-location">{associationData.location}</h2>
             </div>
         </div>
         <div id="project-list">
@@ -71,7 +71,7 @@ function AssociationPage() {
                 );
             })}
         </div>
-        <div><Link to="/projects/new_project/" className="nav-button">Create a new Project</Link></div>
+        <div className="btn"><Link to="/projects/new_project/" className="nav-button">Create a new Project</Link></div>
     </>
     );
 }
