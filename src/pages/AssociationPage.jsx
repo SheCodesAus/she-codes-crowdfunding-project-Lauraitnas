@@ -14,6 +14,7 @@ function AssociationPage() {
     //State
     const [associationData, setAssociationData] = useState();
 
+
     //Hooks
     const { user } = useParams();
 
@@ -45,6 +46,7 @@ function AssociationPage() {
         console.log(data)
         });
     }, []);
+
     
     //Loading state
     if (!associationData) {
@@ -62,7 +64,9 @@ function AssociationPage() {
             <h2 className="association-location">{associationData.location}</h2>
             </div>
         </div>
-        <div id="project-list">
+        <h1>Our current projects</h1>
+        {projectList && projectList.length > 0 
+        ? <div id="project-list">
             {projectList.map((projectData) => {
                 return (
                     <ProjectCard 
@@ -70,8 +74,11 @@ function AssociationPage() {
                 projectData={projectData} />
                 );
             })}
-        </div>
-        <div className="btn"><Link to="/projects/new_project/" className="nav-button">Create a new Project</Link></div>
+            </div>
+        : <h3>There are no current projects.</h3>
+        }
+        {associationData.user === window.localStorage.getItem("username") && <div className="btn"><Link to="/projects/new_project/" className="nav-button">Create a new Project</Link></div>}
+        
     </>
     );
 }

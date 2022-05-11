@@ -37,10 +37,6 @@ function CategoryPage() {
         });
     }, [slug]);
     
-    //Loading state
-        // if (!filteredData) {
-        //     return <h3>Loading project...</h3>;
-        // }
 
 
     //Normal State

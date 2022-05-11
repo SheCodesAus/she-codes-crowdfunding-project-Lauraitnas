@@ -47,6 +47,7 @@ function HomePage() {
         <HeaderImage/>
         <div className="project_home">
             <div className="subtitles">
+            <h1>Latest projects</h1>
             <h2>Woods and Forests are essential for Life</h2>
             <h3>For People. For Wildlife. For Life</h3>
             </div>
@@ -59,6 +60,9 @@ function HomePage() {
                     );
                 })}
             </div>
+            <Link to="/projects/">
+            <div className="btn"><button className="donate_button" type="button">CHECK ALL PROJECTS</button></div>
+            </Link>
         </div>
         <div className="association_home">
             <div className="subtitles">
@@ -73,9 +77,6 @@ function HomePage() {
                     );
                 })}
             </div>
-            <Link to="/projects/">
-            <div className="btn"><button className="donate_button" type="button">DONATE</button></div>
-            </Link>
         </div>
     </div>
     );

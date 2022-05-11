@@ -35,7 +35,6 @@ function NavHeader() {
     //check if user has token and change nav
     const checkUser = () => {
         const isUserLoggedIn = !!window.localStorage.getItem("token");
-        console.log("isuserloggedin", isUserLoggedIn)
         return isUserLoggedIn ? <button className="nav-button" onClick={handleSignOut}>Sign out</button> : <button className="nav-button" onClick={reloadPage}>Login</button>
     }
 

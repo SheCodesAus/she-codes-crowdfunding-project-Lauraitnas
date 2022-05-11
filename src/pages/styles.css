@@ -1,31 +1,49 @@
 .project-container{
     display: flex;
-    width: 75%;
-    flex-direction: row-reverse;
-    box-shadow: 0px 0px 5px gray;
-    box-shadow: 5px 5px 5px gray;
-    margin: 10px;
-    align-content: center;
+    width: 100%;
+    margin: 100px 20px 0 20px;
+    align-content: space-between;
 
 }
 
 .project-info {
-    padding: 20px;
-    width: 50%;
+    padding: 30px;
+    text-align: center;
+    color: #04443C;
 }
 
 .project-buttons{
     display: inline-flex;
+    align-items: center;
 }
 
 .image-container {
-    width: 50%;
+    width: 65%;
+    box-shadow: 0px 0px 5px gray;
+    box-shadow: 5px 5px 5px gray;
+    padding-bottom: 50px ;
+
 }
 
 .image-container img {
 width: 100%;
 height: 450px;
 object-fit:cover;
+}
+.pledge-list{
+    margin-top: 100px;
+    color: black;
+}
+
+.pledges{
+    border: solid black;
+    width: 50%;
+    padding: 5px;
+    text-align: center;
+}
+
+.pledge-form{
+    margin: 80px 0 50px 30px;
 }
 
 .association-name, .association-location {

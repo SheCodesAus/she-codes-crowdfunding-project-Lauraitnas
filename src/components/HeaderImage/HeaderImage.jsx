@@ -40,24 +40,24 @@ function HeaderImage() {
                     <li className="slide" data-active>
                         <Link to="/category/we_protect"><img className="header-image" src={Protect}/></Link>
                         <div className="category-div">
-                            <h2>We Protect</h2>
-                            <h4>We save woods and trees from decimation. We stand against needles destruction and lead the fight against tree pests and desease.</h4>
+                            <h2 className="category-title">We Protect</h2>
+                            <h4 className="category-txt">We save woods and trees from decimation. We stand against needles destruction and lead the fight against tree pests and desease.</h4>
                             <Link to="/category/we_protect"><button className="category-button">Protect</button></Link>
                         </div>
                     </li>
                     <li className="slide"> 
                         <Link to="/"><img className="header-image" src={Plant}/></Link>
                         <div className="category-div">
-                            <h2>We Plant</h2>
-                            <h4>We plant woods and tress to combat climate change, build a greener future and create heavens for life.</h4>
+                            <h2 className="category-title">We Plant</h2>
+                            <h4 className="category-txt">We plant woods and tress to combat climate change, build a greener future and create heavens for life.</h4>
                             <Link to="/category/we_plant"><button className="category-button">Plant</button></Link>
                         </div>
                     </li>
                     <li className="slide">
                         <Link to="/"><img className="header-image" src={Restore}/></Link>
                         <div className="category-div">
-                            <h2>We Restore</h2>
-                            <h4>We bring damaged ancient wood back to life. We replace this irreplaceable ecosystems before they are lost forever.</h4>
+                            <h2 className="category-title">We Restore</h2>
+                            <h4 className="category-txt">We bring damaged ancient wood back to life. We replace this irreplaceable ecosystems before they are lost forever.</h4>
                             <Link to="/category/we_restore"><button className="category-button">Restore</button></Link>
                         </div>
                     </li>

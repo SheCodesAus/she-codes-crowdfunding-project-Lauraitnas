@@ -15,6 +15,7 @@ function ProjectPage() {
     //Hooks
     const { id } = useParams();
     const navigate = useNavigate();
+    
 
 
     //Actions and Helpers
@@ -27,7 +28,6 @@ function ProjectPage() {
                 setProjectData(data);
             });
     }, [id]);
-
     
         
     
@@ -80,32 +80,35 @@ function ProjectPage() {
     <div className="project-container">
         <div className="image-container">
             <img className="project-image" src={projectData.image}/>
-        </div>
-        <div className="project-info">
             <h2>{projectData.title}</h2>
-            <h2>{projectData.association.association_name}</h2>
-            <h4>{new Date(projectData.date_created).toDateString()}</h4>
-            <h3>Our goal is ${projectData.goal}</h3>
-            <h3>{projectData.description}</h3>
-            <h3> This projects is closing on {new Date(projectData.deadline).toDateString()}</h3>
-            {/* <h3>{`Status: ${projectData.is_open}`}</h3> */}
+            <h4>Support the {projectData.association.association_name}</h4>
+            <h4>Posted on {new Date(projectData.date_created).toDateString()}</h4>
+            <p>{projectData.description}</p>
             <div className="project-buttons">  
                 {projectData.association.user === window.localStorage.getItem("username") && <div><Link to={`/project/${projectData.id}/edit`} className="nav-button">Edit your project</Link></div>}
                 {projectData.association.user === window.localStorage.getItem("username") && <div><button className="nav-button" onClick={handleDeleteProject}>Delete your project</button></div>}
             </div>
         </div>
+        <div className="project-info">
+            <div>
+            <h3>This project's goal is </h3><h1> $ {projectData.goal}</h1>
+            <h3> This projects is closing on {new Date(projectData.deadline).toDateString()}</h3>
+            </div>
+            <div>
+                <h3>People who already supported us:</h3>
+                <div  className="pledge-list">
+                    {projectData.pledges.map((pledgeData, key) => 
+                    {return (
+                    <h4 className="pledges" key={`pledge-${pledgeData.id}`} >
+                        ${pledgeData.amount} from {pledgeData.supporter}
+                    </h4>
+                    );
+                })
+                }
+                </div>
+            </div>
+        </div>
     </div>
-        <h3>Pledges:</h3>
-        <ul>
-            {projectData.pledges.map((pledgeData, key) => 
-            {return (
-            <li key={`pledge-${pledgeData.id}`} >
-                {pledgeData.amount} from {pledgeData.supporter}
-            </li>
-            );
-        })
-        }
-        </ul>
         <PledgeForm projectId={id}/>
     </>
     );

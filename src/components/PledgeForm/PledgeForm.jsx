@@ -50,7 +50,8 @@ function PledgeForm({ projectId }) {
 
     return (
         <div className="form">
-        <form>
+        <form className="pledge-form">
+        <h3>Support this project by filling the form below:</h3>
             <div className="form-item">
             <label htmlFor="amount">Amount:</label>
             <input

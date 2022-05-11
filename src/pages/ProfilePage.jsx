@@ -12,11 +12,15 @@ function UserPage() {
     const [userData, setUserData] = useState();
     const [pledgeData, setPledgeData] = useState([]);
     const [projectsData, setprojectsData] = useState([]);
+    const [associationData, setAssociationData] = useState();
+
 
 
 
     //Hooks
-    const { username } = useParams();    
+    const { username } = useParams();
+    const { user } = useParams();
+
     
 
        //Actions and Helpers
@@ -26,29 +30,37 @@ function UserPage() {
             return results.json();
         })
         .then((data) => {
-            // const data = await res.json()
-            console.log("data", data)
-            console.log("usernam", username)
 
             const filteredData = data.filter((user) => user.username === username)[0];
             console.log("filteredata", filteredData)
             setUserData(filteredData);
         });
 
+
         fetch(`${process.env.REACT_APP_API_URL}pledges`)
         .then((results) => {
             return results.json();
         })
         .then((data) => {
-            // const data = await res.json()
-            console.log("data", data)
-            console.log("usernam", username)
-
             const filteredData = data.filter((pledge) => pledge.supporter === username);
             setPledgeData(filteredData);
         });
 
     }, [username]);
+
+    
+
+    //Actions and Helpers
+    useEffect(() => {
+        console.log(user)
+        fetch(`${process.env.REACT_APP_API_URL}association/${user}`)
+            .then((results) => {
+                return results.json();
+            })
+            .then((data) => {
+                setAssociationData(data);
+            });
+    }, [user]);
 
 
     useEffect(() => {
@@ -66,6 +78,9 @@ function UserPage() {
         const project = projectsData.find((project) => project.id === projectId);
         return project ? project.title : "No project name"
     }
+
+
+
 
 
 
@@ -91,18 +106,18 @@ function UserPage() {
         </div>
         <div className="user-pledges">
             <h2>My Pledges:</h2>
-                    {/* //FUNZIONA QUASI - MOSTRA PLEDGES BY USER*/}
-        <ul>
+        <div>
             {pledgeData.map((pledge, key) => 
             {return (
-            <li key={`pledge-${pledge.id}`} >
-                $ {pledge.amount} to project {getProjectName(pledge.project_id)}
-            </li>
+            <h4 className="pledges" key={`pledge-${pledge.id}`} >
+                $ {pledge.amount} to {getProjectName(pledge.project_id)} 
+            </h4>
             );
         })
         }
-        </ul>
-        <div ><Link to="/association" className="nav-button">Create your Forest</Link></div>
+        </div>
+        <div><h4>Are you a recognised association? Join the cause creating your forest and become a Forest Guardian!</h4><Link to="/association" className="nav-button">Create your Forest</Link></div>
+        {/* {associationData.user == "" && <div><h3>Are you a recognised association? Join the cause creating your forest and become a Forest Guardian!</h3><Link to="/association" className="nav-button">Create your Forest</Link></div>} */}
         </div>
     </div>
     </>

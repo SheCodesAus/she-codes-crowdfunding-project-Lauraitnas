@@ -51,6 +51,85 @@ h1, h2 {
     color: #04443C;
 }
 
+h1{
+    text-align: center;
+}
+
 h3 {
     color: #147C5C;
+}
+
+@media (max-width:945px) {
+
+    #project-list {
+        display: block;
+        width: 75%;
+    }
+
+    #association-list {
+        display: block;
+        text-align: center;
+        width: 75%;
+        align-items: center;
+
+    }
+
+    .category-div{
+        width: 90%;
+    }
+
+    .category-title {
+        font-size: 20px;
+    }
+
+    .category-txt {
+        font-size: 15px;
+        line-height: normal;
+    }
+
+    .user-main-div{
+    /* display: inline; */
+    flex-wrap: wrap;
+
+    }
+
+    .user-card{
+        width: 70%;
+        margin: -100px, 10px, 20px, 10px;
+        /* text-align: center; */
+    }
+
+    .user-card img{
+        width: 0;
+        /* margin: -100px, 10px, 20px, 10px;
+        text-align: center; */
+    }
+
+    .user-pledges {
+        width: 30%;
+    }
+
+    .association-card {
+        margin: 80px;
+    }
+
+    .association-name {
+        font-size: 40px;
+    }
+
+    .association-location{
+        font-size: 30px;
+
+    }
+
+    .project-container{
+        flex-direction: column;
+        align-content: center;
+        align-items: center;
+    }
+
+    .project-info {
+        padding: 0;
+    }
+
 }
