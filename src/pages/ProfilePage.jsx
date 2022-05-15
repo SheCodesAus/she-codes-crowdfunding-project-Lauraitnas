@@ -59,6 +59,7 @@ function UserPage() {
             })
             .then((data) => {
                 setAssociationData(data);
+                console.log("associationData", associationData)
             });
     }, [user]);
 
@@ -116,8 +117,9 @@ function UserPage() {
         })
         }
         </div>
+        {/* <div> */}
         <div><h4>Are you a recognised association? Join the cause creating your forest and become a Forest Guardian!</h4><Link to="/association" className="nav-button">Create your Forest</Link></div>
-        {/* {associationData.user == "" && <div><h3>Are you a recognised association? Join the cause creating your forest and become a Forest Guardian!</h3><Link to="/association" className="nav-button">Create your Forest</Link></div>} */}
+        {/* {associationData.user === window.localStorage.getItem("username") && <Link to="/association" className="nav-button">My Forest</Link>} */}
         </div>
     </div>
     </>

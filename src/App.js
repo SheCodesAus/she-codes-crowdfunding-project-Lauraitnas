@@ -39,7 +39,7 @@ function App() {
           <Route path="/users/register" element={<NewUserPage />} />
           <Route path="/users/edit_user" element={<EditProfilePage />} />
           <Route path="/association" element={<NewAssociationPage />} />
-          <Route path="/projects/new_project/" element={<NewProjectPage/>} />
+          <Route path="/projects/new_project" element={<NewProjectPage/>} />
           <Route path="/project/:id" element={<ProjectPage />} />
           <Route path="/project/:id/edit" element={<EditProjectPage/>} />
           <Route path="/association/:user" element={<AssociationPage/>} />

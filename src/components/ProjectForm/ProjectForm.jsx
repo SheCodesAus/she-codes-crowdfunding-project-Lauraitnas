@@ -62,9 +62,6 @@ function ProjectForm() {
                 console.log(err);
             }
         }
-        else {
-            //user has not filled all fields
-        }
     }
 
         //State
