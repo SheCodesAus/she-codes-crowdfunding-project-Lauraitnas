@@ -1,0 +1,11 @@
+nav {
+    background-color: #04443C;
+    padding: 20px;
+    text-align: center;
+}
+
+.main-nav a {
+    text-decoration: none;
+    color:antiquewhite;
+    padding: 50px;
+}
